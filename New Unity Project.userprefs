@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Map.cs">
+    <Files>
+      <File FileName="Assets\NodeTypes.cs" Line="1" Column="15" />
+      <File FileName="Assets\GameLogik.cs" Line="4" Column="39" />
+      <File FileName="Assets\Map.cs" Line="14" Column="34" />
+      <File FileName="Assets\Worker.cs" Line="8" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
