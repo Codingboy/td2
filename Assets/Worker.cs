@@ -36,8 +36,28 @@ public class Worker : MonoBehaviour
 		}
 	}
 
-	List<Block> calculatePath(Block src, Block dst, int depth)
+	void aStar(Block src, Block dst)
 	{
-		
+		List<Block> open = new List<Block>();
+		List<Block> closed = new List<Block>();
+		open.Add(src);
+		src.f = 0f;
+		while (!open.empty())
+		{
+			float minF = 42000f;
+			int index = -1;
+			for (int i=0; i<open.size(); i++)
+			{
+				float actualF = open.at(i).f;
+				if (actualF < minF)
+				{
+					minF = actualF;
+					index = i;
+				}
+			}
+			Block q = open.pop(index);
+			List<Block> successors = new List<Block>();
+			//TODO http://web.mit.edu/eranki/www/tutorials/search/
+		}
 	}
 }

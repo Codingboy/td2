@@ -7,6 +7,8 @@ public class Block
 	public GameObject obj;
 	public bool blocked;
 	public Vector3 index;
+	public Block _parent;//A*
+	public float f, g, h;//A*
 	public Block()
 	{
 		type = NodeTypes.none;
