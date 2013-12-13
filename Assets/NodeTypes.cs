@@ -17,5 +17,6 @@ enum NodeTypes
 	upperNorthWest,
 	upperNorthEast,
 	upperSouthWest,
-	upperSouthEast
+	upperSouthEast,
+	ressourceBlock
 }
