@@ -4,8 +4,8 @@ public class Quality
 	private float factor;
 	public Quality()
 	{
-		quality = 0.0;//[0;100)
-		factor = 10000;//the bigger the better
+		quality = 0f;//[0;100)
+		factor = 10000f;//the bigger the better
 	}
 	public void adjustFactor(float f)//f>1 means better
 	{

@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections.Generic;
 
 public class Magazine : Product
@@ -126,6 +126,4 @@ public Powder : Product
 public class Shell : Product
 {
 
-}
-
-
+}*/

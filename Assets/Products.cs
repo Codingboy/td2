@@ -1,4 +1,4 @@
-enum Products
+public enum Products
 {
 	Steel,
 	Iron,

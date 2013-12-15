@@ -1,4 +1,4 @@
-enum NodeTypes
+public enum NodeTypes
 {
 	none,
 	block,
