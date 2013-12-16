@@ -1,9 +1,10 @@
 public class Order
 {
 	public Priority priority;
-	public Products product;
 	public int number;
 	//public UFactory orderer;
+	//public UFactory producer;
+	public Reciepe reciepe;
 	public Order()
 	{
 		priority = Priority.Normal;
@@ -12,7 +13,7 @@ public class Order
 	public Order(Order o)
 	{
 		this.priority = o.priority;
-		this.product = o.product;
 		this.number = o.number;
+		this.reciepe = reciepe;
 	}
 }

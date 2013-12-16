@@ -30,30 +30,37 @@ public class Team
 	{
 		foreach (Worker w in workers[Priority.Idle])
 		{
+			workers[Priority.Idle].Dequeue();
 			handle(w, Priority.Idle);
 		}
 		foreach (Worker w in workers[Priority.VeryLow])
 		{
+			workers[Priority.VeryLow].Dequeue();
 			handle(w, Priority.VeryLow);
 		}
 		foreach (Worker w in workers[Priority.Low])
 		{
+			workers[Priority.Low].Dequeue();
 			handle(w, Priority.Low);
 		}
 		foreach (Worker w in workers[Priority.Normal])
 		{
+			workers[Priority.Normal].Dequeue();
 			handle(w, Priority.Normal);
 		}
 		foreach (Worker w in workers[Priority.High])
 		{
+			workers[Priority.High].Dequeue();
 			handle(w, Priority.High);
 		}
 		foreach (Worker w in workers[Priority.VeryHigh])
 		{
+			workers[Priority.VeryHigh].Dequeue();
 			handle(w, Priority.VeryHigh);
 		}
 		foreach (Worker w in workers[Priority.ASAP])
 		{
+			workers[Priority.ASAP].Dequeue();
 			handle(w, Priority.ASAP);
 		}
 	}
@@ -66,6 +73,8 @@ public class Team
 			if (orderQueue.Count > 0)
 			{
 				Order order = orderQueue.Dequeue();
+				worker.priority = order.priority;
+				workers[worker.priority].Enqueue(worker);
 				worker.accept(order);
 				return;
 			}
@@ -76,6 +85,8 @@ public class Team
 			if (orderQueue.Count > 0)
 			{
 				Order order = orderQueue.Dequeue();
+				worker.priority = order.priority;
+				workers[worker.priority].Enqueue(worker);
 				worker.accept(order);
 				return;
 			}
@@ -86,6 +97,8 @@ public class Team
 			if (orderQueue.Count > 0)
 			{
 				Order order = orderQueue.Dequeue();
+				worker.priority = order.priority;
+				workers[worker.priority].Enqueue(worker);
 				worker.accept(order);
 				return;
 			}
@@ -96,6 +109,8 @@ public class Team
 			if (orderQueue.Count > 0)
 			{
 				Order order = orderQueue.Dequeue();
+				worker.priority = order.priority;
+				workers[worker.priority].Enqueue(worker);
 				worker.accept(order);
 				return;
 			}
@@ -106,6 +121,8 @@ public class Team
 			if (orderQueue.Count > 0)
 			{
 				Order order = orderQueue.Dequeue();
+				worker.priority = order.priority;
+				workers[worker.priority].Enqueue(worker);
 				worker.accept(order);
 				return;
 			}
@@ -116,6 +133,8 @@ public class Team
 			if (orderQueue.Count > 0)
 			{
 				Order order = orderQueue.Dequeue();
+				worker.priority = order.priority;
+				workers[worker.priority].Enqueue(worker);
 				worker.accept(order);
 				return;
 			}
@@ -126,6 +145,8 @@ public class Team
 			if (orderQueue.Count > 0)
 			{
 				Order order = orderQueue.Dequeue();
+				worker.priority = order.priority;
+				workers[worker.priority].Enqueue(worker);
 				worker.accept(order);
 				return;
 			}

@@ -16,6 +16,7 @@ public class GameLogik : MonoBehaviour
 		Reciepe r;
 		r = new Reciepe();
 		r.product = Products.Ironore;
+		r.factory = Factories.IronMine;
 		r.ingredents = new Dictionary<Products, int>();
 		r.difficulty = 0;
 		r.time = 1000;
@@ -23,6 +24,7 @@ public class GameLogik : MonoBehaviour
 
 		r = new Reciepe();
 		r.product = Products.Iron;
+		r.factory = Factories.MetalFactory;
 		r.ingredents = new Dictionary<Products, int>();
 		r.ingredents.Add(Products.Ironore, 1);
 		r.ingredents.Add(Products.Coal, 1);
@@ -32,7 +34,54 @@ public class GameLogik : MonoBehaviour
 
 		r = new Reciepe();
 		r.product = Products.Coal;
+		r.factory = Factories.CoalMine;
 		r.ingredents = new Dictionary<Products, int>();
+		r.difficulty = 0;
+		r.time = 1000;
+		recipes.Add(r.product, r);
+
+		r = new Reciepe();
+		r.product = Products.CopperOre;
+		r.factory = Factories.CopperMine;
+		r.ingredents = new Dictionary<Products, int>();
+		r.difficulty = 0;
+		r.time = 1000;
+		recipes.Add(r.product, r);
+
+		r = new Reciepe();
+		r.product = Products.Copper;
+		r.factory = Factories.MetalFactory;
+		r.ingredents = new Dictionary<Products, int>();
+		r.ingredents.Add(Products.CopperOre, 1);
+		r.ingredents.Add(Products.Coal, 1);
+		r.difficulty = 0;
+		r.time = 1000;
+		recipes.Add(r.product, r);
+
+		r = new Reciepe();
+		r.product = Products.LeadOre;
+		r.factory = Factories.LeadMine;
+		r.ingredents = new Dictionary<Products, int>();
+		r.difficulty = 0;
+		r.time = 1000;
+		recipes.Add(r.product, r);
+
+		r = new Reciepe();
+		r.product = Products.Lead;
+		r.factory = Factories.MetalFactory;
+		r.ingredents = new Dictionary<Products, int>();
+		r.ingredents.Add(Products.LeadOre, 1);
+		r.ingredents.Add(Products.Coal, 1);
+		r.difficulty = 0;
+		r.time = 1000;
+		recipes.Add(r.product, r);
+
+		r = new Reciepe();
+		r.product = Products.Steel;
+		r.factory = Factories.MetalFactory;
+		r.ingredents = new Dictionary<Products, int>();
+		r.ingredents.Add(Products.Iron, 1);
+		r.ingredents.Add(Products.Coal, 2);
 		r.difficulty = 0;
 		r.time = 1000;
 		recipes.Add(r.product, r);

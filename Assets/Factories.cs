@@ -12,5 +12,6 @@ enum Factories
 	CelluloseFactory,
 	Smith,
 	Chemist,
-	College
+	College,
+	Barrack
 }

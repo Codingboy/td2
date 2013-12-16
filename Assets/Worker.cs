@@ -46,7 +46,6 @@ public class Worker : MonoBehaviour
 					{
 						next = null;
 						dist = 0;
-						//TODO
 					}
 				}
 				else
@@ -69,13 +68,23 @@ public class Worker : MonoBehaviour
 
 	public void accept(Order order)
 	{
-		//TODO cancel actual order
+		cancel(order);
 		this.order = order;
 		if (order.number > objectLimit)
 		{
 			Order o = new Order(order);
 			//TODO other values
-			//TODO enqueue
+			//TODO enqueue o
+		}
+	}
+
+	void cancel(Order order)
+	{
+		if (order != null)
+		{
+			//TODO enqueue order
+			order = null;
+			mode = WorkerMode.Idle;
 		}
 	}
 
@@ -83,25 +92,74 @@ public class Worker : MonoBehaviour
 	{
 		if (mode == WorkerMode.GoToProducer)
 		{
-
+			//TODO moveTo();
+			mode = WorkerMode.GoingToProducer;
+		}
+		if (mode == WorkerMode.GoingToProducer)
+		{
+			move();
+			if (next == null)
+			{
+				mode = WorkerMode = OrderRessources;
+			}
+		}
+		else if (mode == WorkerMode.OrderRessources)
+		{
+			//TODO
+			mode = WorkerMode.WaitForRessources;
 		}
 		else if (mode == WorkerMode.WaitForRessources)
 		{
-
+			//TODO
 		}
 		else if (mode == WorkerMode.ProduceProduct)
 		{
-			
+			long productionReady = DateTime.Now.Ticks/TimeSpan.TicksPerMillisecond + order.recipe.time*order.number;
+			mode = WorkerMode.ProducingProduct;
+		}
+		else if (mode == WorkerMode.ProducingProduct)
+		{
+			if (DateTime.Now.Ticks/TimeSpan.TicksPerMillisecond >= productionReady)
+			{
+				mode = WorkerMode.LoadProducts;
+			}
 		}
 		else if (mode == WorkerMode.ImproveProducts)
 		{
-			
+			//TODO
+		}
+		else if (mode == WorkerMode.ImproveingProducts)
+		{
+			//TODO
 		}
 		else if (mode == WorkerMode.LoadProducts)
 		{
-			
+			//TODO
+			mode = WorkerMode.DeliverProducts;
+		}
+		else if (mode == WorkerMode.DeliverProducts)
+		{
+			//TODO moveTo();
+			mode = WorkerMode.DeliveringProducts;
+		}
+		else if (mode == WorkerMode.DeliveringProducts)
+		{
+			move();
+			if (next == null)
+			{
+				mode = WorkerMode.UnloadProducts;
+			}
 		}
 		else if (mode == WorkerMode.UnloadProducts)
+		{
+			//TODO
+			mode = WorkerMode.Idle;
+			order = null;
+			priority = Priority.Idle;
+			//TODO dequeue
+			//TODO enqueue
+		}
+		else if (mode == WorkerMode.Build)
 		{
 			
 		}
